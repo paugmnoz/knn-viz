@@ -24,6 +24,7 @@ import FilterResult from '../../components/FilterResult/FilterResult';
         this.handleChangeb = this.handleChangeb.bind(this);
         this.handleChangeb = this.handleChangeb.bind(this);
         this.handleSquad = this.handleSquad.bind(this);
+        this.imgID  = this.imgID.bind(this);
         
     }
 
@@ -51,6 +52,14 @@ import FilterResult from '../../components/FilterResult/FilterResult';
     handleChange2(e) {
         let value = e.target.value;
         store.person2 = value;
+    }
+
+    imgID(e){
+        console.log(e);
+        let name = store.data[e].nombre
+        this.squad.push(name)
+
+        console.log(name)
     }
     onSubmit() {
     }
@@ -100,72 +109,41 @@ import FilterResult from '../../components/FilterResult/FilterResult';
 
             <FilterResult  neighs={this.vecinos} scores={this.puntajes}></FilterResult>
         </section>
-        <section id='head'>
+        <section id='head' className='planrecomendation'>
             <Header image={head3} title='conoce qué podrían hacer otras personas' 
             p='Selecciona más de 2 personas y mira lo que ellas podrían hacer cuando se trata de comics'
             color= '#000000' ></Header>
-            <div className='people'>
+            <div className='people abcd'>
                 {
-                    store.data.map( e => {
-                        return <img className='arrayImg' src={require('../../components/GenViz/photos/' + e.foto)}></img>
+                    store.data.map( (e, i) => {
+                        return <img className='arrayImg' id={i} src={require('../../components/GenViz/photos/' + e.foto)} 
+                        onClick={(e) => {  this.imgID(e.target.id); e.target.className = 'selectedUser'}} ></img>
                     })
                 }
             </div>
-            <div>
+            <div  className='abcd btns'>
             <button onClick={(e) => {
              store.tempsquad = this.squad;
              store.squadPlan();
              this.squad = [];
-         }}>
-            Plan</button>
+         }}> Plan</button>
+
+           <button onClick={(e) => {
+             store.tempsquad = this.squad;
+             store.squadPlan();
+             this.squad = [];
+         }}> Reset</button>
             </div>
            
-           
-        </section>
-        <div>
-        <h1>PLan recomendado</h1>
-         <select onChange={this.handleSquad} >
-            <option value=" ">none</option>
-            {
-                store.data.map( e => {
-                    return <option value={e.nombre}>{e.nombre}</option> 
-                })
-            }
-        </select>
-        <select onChange={this.handleSquad} >
-            <option value=" ">none</option>
-            {
-                store.data.map( e => {
-                    return <option value={e.nombre}>{e.nombre}</option> 
-                })
-            }
-        </select>
-        <select onChange={this.handleSquad} >
-            <option value=" ">none</option>
-            {
-                store.data.map( e => {
-                    return <option value={e.nombre}>{e.nombre}</option> 
-                })
-            }
-        </select>
-        <select onChange={this.handleSquad} >
-            <option value=" ">none</option>
-            {
-                store.data.map( e => {
-                    return <option value={e.nombre}>{e.nombre}</option> 
-                })
-            }
-        </select>
-
-        
-        </div>
-
-        <div>
+        <div id='planresults' className='abcd'>
 
             <p>{store.finalplanOne}</p>
             <p>{store.finalplanTwo}</p>
             <p>{store.finalplanThree}</p>
-        </div>
+            </div>
+        </section>
+     
+        
         </div>
          
         </div>

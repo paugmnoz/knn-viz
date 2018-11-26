@@ -95,4 +95,44 @@ vecinos</button>
        
     })
 }
-</div>*/
+</div>
+
+   <div>
+        <h1>PLan recomendado</h1>
+         <select onChange={this.handleSquad} >
+            <option value=" ">none</option>
+            {
+                store.data.map( e => {
+                    return <option value={e.nombre}>{e.nombre}</option> 
+                })
+            }
+        </select>
+        <select onChange={this.handleSquad} >
+            <option value=" ">none</option>
+            {
+                store.data.map( e => {
+                    return <option value={e.nombre}>{e.nombre}</option> 
+                })
+            }
+        </select>
+        <select onChange={this.handleSquad} >
+            <option value=" ">none</option>
+            {
+                store.data.map( e => {
+                    return <option value={e.nombre}>{e.nombre}</option> 
+                })
+            }
+        </select>
+        <select onChange={this.handleSquad} >
+            <option value=" ">none</option>
+            {
+                store.data.map( e => {
+                    return <option value={e.nombre}>{e.nombre}</option> 
+                })
+            }
+        </select>
+
+        
+        </div>
+
+*/
