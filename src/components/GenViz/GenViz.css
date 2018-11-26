@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: stretch;
+    align-items: center;
+    padding: 0 10% 0 0;
+}
+
+#cat-viz {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    display: flex;
+    width: "70%";
+    height: "500px";
+    margin-right: 150px;
+}
+.cat-svg-container {
+    
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+}
+.catviz {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+}
+#tooltip {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    width: "20%";
+    height: 500px;
+}
+
+#profilephoto {
+    border-radius: 50%;
+}

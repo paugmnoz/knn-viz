@@ -1,0 +1,51 @@
+.genericplandiv {
+    width: 48%;
+    border-radius: 10px ;
+    box-shadow: 2px 2px 4px #cfcfcf;}
+ .gdheader {
+    padding: 25px;
+    border-radius: 10px   10px 0 0;
+}
+.gdcontent {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+}
+
+.h1White {
+    font-size: 30pt;
+    color: white;
+}
+
+p{
+    font-size: 14pt;
+    text-align: left;
+}
+
+.neighs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.neighImg {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+}
+
+.tcenter {
+    text-align: center;
+    width: 150px;
+}

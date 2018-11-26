@@ -1,0 +1,30 @@
+.frneighs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 35px;
+    width: 80%;
+    padding: 80px;
+    border-radius: 15px;
+    border-style: double;
+    border-color: #F49672;
+}
+
+.neighImg {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+}
+
+
+.tcenter {
+    text-align: center;
+    width: 150px;
+}
