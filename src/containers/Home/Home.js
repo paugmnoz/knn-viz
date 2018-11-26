@@ -15,6 +15,9 @@ import FilterResult from '../../components/FilterResult/FilterResult';
     @observable coor = coordinator;
     @observable vecinos = [];
     @observable puntajes = {}
+    @observable frase1 =  '...'
+    @observable frase2 = '...'
+    @observable frase3 = '...'
     constructor(props) {
         super(props);
         this.onSubmit = this.onSubmit.bind(this);
@@ -107,7 +110,7 @@ import FilterResult from '../../components/FilterResult/FilterResult';
             this.vecinos = store.pollFourN; this.puntajes = store.pollFourScores;}}>Tener una cita en restaurante japonés y conversas sobrre autores de novelas gráficas y artistas</button>
             </div>
 
-            <FilterResult  neighs={this.vecinos} scores={this.puntajes}></FilterResult>
+            <FilterResult  neighs={this.vecinos} scores={this.puntajes} ></FilterResult>
         </section>
         <section id='head' className='planrecomendation'>
             <Header image={head3} title='conoce qué podrían hacer otras personas' 
@@ -117,29 +120,46 @@ import FilterResult from '../../components/FilterResult/FilterResult';
                 {
                     store.data.map( (e, i) => {
                         return <img className='arrayImg' id={i} src={require('../../components/GenViz/photos/' + e.foto)} 
-                        onClick={(e) => {  this.imgID(e.target.id); e.target.className = 'selectedUser'}} ></img>
+                        onClick={(e) => {  this.imgID(e.target.id); e.target.className = ('selectedUser')}} ></img>
                     })
                 }
             </div>
             <div  className='abcd btns'>
-            <button onClick={(e) => {
+            <button className='mbtn defaultbtn'  onClick={(e) => {
              store.tempsquad = this.squad;
              store.squadPlan();
+             this.frase1 = store.finalplanOne;
+             this.frase2 = store.finalplanTwo;
+             this.frase3 = store.finalplanThree;
              this.squad = [];
          }}> Plan</button>
 
-           <button onClick={(e) => {
-             store.tempsquad = this.squad;
-             store.squadPlan();
-             this.squad = [];
+           <button className='mbtn defaultbtn' onClick={(e) => {
+               this.frase1 = '...';
+               this.frase2 = '...';
+               this.frase3 = '...';
+               var elems = document.querySelectorAll(".selectedUser");
+               [].forEach.call(elems, function(el) {
+                el.classList.remove("selectedUser");
+                el.className = ('arrayImg')
+            });
+         console.log(elems)
          }}> Reset</button>
             </div>
            
         <div id='planresults' className='abcd'>
-
-            <p>{store.finalplanOne}</p>
-            <p>{store.finalplanTwo}</p>
-            <p>{store.finalplanThree}</p>
+            <div className='plandiv uno'>
+            <h1 className='h1White tleft'>La mejor opción es</h1>
+            <p className='white' >{this.frase1}</p>
+            </div>
+            <div className='plandiv dos'>
+                <h1 className='h1White tleft'>Una Buena opción es</h1>
+                <p className='white'>{this.frase2}</p>
+            </div>
+            <div className='plandiv tres'>
+                <h1 className='h1dark tleft'>Si lo otro falla</h1>
+                <p className='dark'>{this.frase3}</p>
+            </div>
             </div>
         </section>
      

@@ -155,6 +155,19 @@ button {
   color: '#F49672'
 }
 
+.uno {
+  background-color: #F49672;
+}
+
+.dos {
+  background-color: #81C7E2;
+}
+
+.tres {
+  background-color: #DBE2B9;
+}
+
+
 #genresults {
   display: flex;
     flex-direction: row;
@@ -198,7 +211,7 @@ button {
 }
 .people {
   width: 50%;
-  padding: 0 0 0 150px;
+  padding: 0 0 0 100px;
   }
 
   .abcd {
@@ -220,7 +233,11 @@ button {
 
 #planresults {
   width: 35%;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
 }
 
 .btns {
@@ -230,4 +247,42 @@ button {
   justify-content: space-around;
   align-content: center;
   align-items: center;
+
+}
+
+.mbtn {
+  margin-bottom: 30px;
+
+}
+.plandiv{
+  height: 180px;
+  width: 85%;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  padding: 20px 0 0 30px;
+}
+
+
+.h1White {
+  font-size: 30pt;
+  color: white;
+}
+
+.white{
+  color: white;
+
+}
+
+.dark {
+  color: rgb(21, 36, 26);
+
+}
+
+.h1dark  {
+  font-size: 30pt;
+  color: rgb(21, 36, 26);
+}
+
+.tleft {
+  text-align: left;
 }

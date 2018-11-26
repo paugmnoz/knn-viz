@@ -150,16 +150,15 @@ class DataStore {
         switch(this.imp[0]) {
             case 'ImpTema':
             c = 'tema'
-            return 'Ya que les imporat más el ' + c + ' cuando se trata de novelas graficas, podrían ver juntos una película ' + '.'
+            break 
 
             case 'ImpAutor':
             c = 'autor'
-            return 'Ya que les imporat más el ' + c + ' cuando se trata de novelas graficas, podrían ver juntos una película ' + '.'
-
+break;
             case 'ImpEstilo':
             c = 'estilo gráfico'
-            return 'Ya que les imporat más el ' + c + ' cuando se trata de novelas graficas, podrían ver juntos una película ' + '.'
-        }
+break;        }
+return 'Ya que les interesa más el ' + c + ' de una producción, pueden salir a cine a ver una película  ' + this.gender[0] + '.'
 
 
     }
@@ -169,17 +168,17 @@ class DataStore {
         let c = ''
         switch(this.imp[0]) {
             case 'ImpTema':
-            c = 'tema'
+            c = 'los temas'
             break;
             case 'ImpAutor':
-            c = 'autor'
+            c = 'los autores'
             break;
             case 'ImpEstilo':
-            c = 'estilo gráfico'
+            c = 'los mejores ilustradores'
             break;
         }
-
-        return 'Reunirse en ' + this.typepicked() + ' de ' + this.timepicked() + ' para hablar sobre comics y novelas gráficas del género ' + this.gender[0] + ' segun su ' + c + '.'
+       
+        return 'Ir de ' + this.timepicked() + ' a ' + this.typepicked() + ' y hablar sobre ' +c+ ' de comics ' + this.gender[0] + '.'
 
     }
 
@@ -191,20 +190,20 @@ class DataStore {
             case 'CafeFrio':
             switch(this.coffeeTaste[0]) {
                 case 'CafeDulce':
-                a = 'Frapuccino'
+                a = 'frapuccino'
                 break;
                 case 'CafeAmargo':
-                a = 'ColdBrew'
+                a = 'coldBrew'
                 break;
             }
             break;
             case 'CafeCaliente':
             switch(this.coffeeTaste[0]) {
                 case 'CafeDulce':
-                a = 'Capuccino'
+                a = 'capuccino'
                 break;
                 case 'CafeAmargo':
-                a = 'Tinto'
+                a = 'tinto'
                 break;
             }
             break;
@@ -213,17 +212,17 @@ class DataStore {
         let c = ''
         switch(this.imp[0]) {
             case 'ImpTema':
-            c = 'tema'
+            c = 'el tema mas popular'
             break;
             case 'ImpAutor':
-            c = 'autor'
+            c = 'autores favoritos'
             break;
             case 'ImpEstilo':
             c = 'estilo gráfico'
             break;
         }
-
-        return 'Reunirse en un café para conversar sobre el ' + c + ' de ' + this.timepicked() + ' mientras toman un ' + a + ' y suena música ' + this.music[0] + '.'
+        
+        return 'Conversar acerca de ' + c + ' de comics mientras toman un ' + a + ' y suena música ' + this.music[0] + 'a cualquier hora ' + this.timepicked() + '.'
 
     }
     @action
